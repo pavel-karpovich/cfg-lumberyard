@@ -1,0 +1,26 @@
+{
+    "name": "cfg-lumberyard",
+    "displayName": "Cfg Lumberyard/CryEngine Files",
+    "description": "Simple grammar for Cfg files of Lumbeyard/CryEngine",
+    "version": "1.0.3",
+    "publisher": "Paval Karpovich",
+    "engines": {
+        "vscode": "^1.24.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "cfg",
+            "aliases": ["Cfg (Lumberyard)", "cfg"],
+            "extensions": [".cfg"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "cfg",
+            "scopeName": "source.cfg",
+            "path": "./syntaxes/cfg.tmLanguage.json"
+        }]
+    }
+}

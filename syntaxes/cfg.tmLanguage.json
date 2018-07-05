@@ -1,0 +1,92 @@
+{
+	"version": "1.0.0",
+	"name": "Cfg (Lumberyard)",
+	"scopeName": "source.cfg",
+	"comment": "Cfg Syntax for Lumberyard 0.14.1",
+	"patterns": [
+		{
+			"captures": {
+				"1": {
+					"name": "punctuation.definition.comment.cfg"
+				}
+			},
+			"match": "^(--|# |;).*$\\n?",
+			"name": "comment.line.double-dash.cfg"
+		},
+		{
+			"begin": "\\[",
+			"beginCaptures": {
+				"0": {
+					"name": "punctuation.brackets.square.open.cfg"
+				}
+			},
+			"end": "\\]",
+			"endCaptures": {
+				"0": {
+					"name": "punctuation.brackets.square.close.cfg"
+				}
+			},
+			"name": "punctuation.brackets.square.cfg",
+			"patterns": [
+				{
+					"match": "[a-zA-Z0-9_]*",
+					"name": "constant.language.cfg"
+				}
+			]
+		},
+		
+		{
+			"name": "support.function.any-method.cfg",
+			"match": "(?:(#)[a-zA-Z_](?:(?:[a-zA-Z0-9_](\\.)[a-zA-Z_])|(?:[a-zA-Z0-9_]))*)",
+			"captures": {
+				"1": {
+					"name": "keyword.operator.cfg"
+				},
+				"2": {
+					"name": "keyword.operator.cfg"
+				}
+			}
+		},
+		{
+			"begin": "(^=|=| )(?:[ \\t]+)?",
+			"end": "$",
+			"name": "punctuation.decorator.cfg",
+			"patterns": [
+				{
+					"match": "[a-zA-Z0-9_., \"~-]+",
+					"name" : "string.quoted.double.cfg"
+				},
+				{
+					"begin": "\\{",
+					"beginCaptures": {
+						"0": {
+							"name": "meta.type.declaration.cfg"
+						}
+					},
+					"end": "\\}",
+					"endCaptures": {
+						"0": {
+							"name": "meta.type.declaration.cfg"
+						}
+					},
+					"name": "punctuation.braces.cfg",
+					"patterns": [
+						{
+							"match": "[a-zA-Z0-9_.]*",
+							"name": "keyword.control.cfg"
+						}
+					]
+				}
+			]
+		},
+		{
+			"match": "^(?:[ \\t]+)?(?:(?:[a-zA-Z0-9_](\\.)[a-zA-Z_])|(?:[a-zA-Z0-9_]))+(?=([ \\t]+)?( |\\=|\\n))",
+			"name": "string.cfg support.type.property-name.cfg",
+			"captures": {
+				"1": {
+					"name": "keyword.operator.cfg"
+				}
+			}
+		}
+	]
+}
