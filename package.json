@@ -3,7 +3,7 @@
     "displayName": "Cfg Lumberyard/CryEngine Files",
     "description": "Simple grammar for Cfg files of Lumbeyard/CryEngine",
     "version": "1.0.3",
-    "publisher": "Paval Karpovich",
+    "publisher": "ParadoxMaster",
     "engines": {
         "vscode": "^1.5.0"
     },
